@@ -4,18 +4,83 @@
   box-sizing: border-box;
 }
 
+:root {
+  font-size: 62.5%;
+}
+
 
 body {
   height: 100vh;
+  font-family: "Roboto", sans-serif;
 }
 
 .bg {
   width: 100%;
   height: 100vh;
-  position: fixed;
+  position: absolute;
   z-index: -1;
 }
 
 nav {
   background: transparent;
+  position: absolute;
+  height: 12.2rem;
+  width: 100%;
+  display: flex;
+  gap: 3.2rem;
+  padding: 4rem 71.9rem 4rem 7.2rem;
+}
+
+nav a {
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: #C4C4CC;
+  text-decoration: none;
+}
+
+nav a.active {
+  color: #FFFFFF;
+}
+
+#page{
+  height: 100%;
+  display: grid;
+  place-content: center;
+}
+
+#page h1{
+  margin-bottom: 2.4rem;
+  font-size: 4.8rem;
+  font-weight: 700;
+  color: #e1e1e6;
+}
+
+#page button {
+  margin: 0 10.2rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  padding: 1.2rem 3.2rem;
+  background: transparent;
+  border-radius: .5rem;
+  border-color: #FFFFFF;
+  transition-duration: .3s;
+}
+
+#page button:hover {
+  cursor: pointer;
+  background-color: #FFFFFF;
+  color: #02799D;
+}
+
+#page .text-page{
+  margin-left: 10.2rem;
+  margin-right: 53rem;
+}
+
+#page p {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #e1e1e6;
+  line-height: 160%;
 }

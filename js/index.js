@@ -1,12 +1,27 @@
 import { Router } from "./router.js"
 
 const router = new Router()
-router.add("/home", "/spa/pages/home.html")
-router.add("/universe", "spa/pages/universo.html")
-router.add("/exploration", "/spa/pages/exploracao.html")
-router.add(404, "/spa/pages/404.html")
+router.add("/home", "/pages/home.html")
+router.add("/universe", "/pages/universo.html")
+router.add("/exploration", "/pages/exploracao.html")
+router.add(404, "/pages/404.html")
 
 router.handle()
 
 window.onpopstate = () => router.handle()
 window.route = () => router.route()
+
+function setActiveLinks() {
+  const links = document.querySelectorAll('nav a')
+  const { pathname } = window.location
+
+  links.forEach(link => {
+    if (link.getAttribute('href') === pathname){
+      link.classList.add('active')
+    } else {
+      link.classList.remove('active')
+    }
+  })
+}
+
+setActiveLinks()
